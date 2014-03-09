@@ -3,9 +3,28 @@ layout: default
 title: Stop Predictions
 ---
 
-<h1>{{ page.title }} for K ST NE + 3RD ST NE</h1>
+{% for stop in site.data.stops %}
+  <h1>{{ page.title }} for {{ stop.name }}</h1>
 
-<ul class="predictions">
+  <ul class="predictions">
+  {% for route in stop.routes %}
+    <li class="route">
+      <h2 class="bus-name">{{ route.name }}</h2>
+
+      {% for direction in route.directions %}
+        <h3 class="bus-direction">{{ direction.name }}</h3>
+        <ol id="1001223" class="buses">
+          {% for time in direction.times %}
+            <li class="bus"><span class="bus-arrival">{{ time }} Minutes</span></li>
+          {% endfor %}
+        </ol>
+      {% endfor %}
+    </li>
+  {% endfor %}
+  </ul>
+{% endfor %}
+
+<!-- <ul class="predictions">
   <li class="route">
     <h2 class="bus-name">D4</h2>
 
@@ -43,4 +62,4 @@ title: Stop Predictions
       <li class="bus"><span class="bus-arrival">83 Minutes</span></li>
     </ol>
   </li>
-</ul>
+</ul> -->
