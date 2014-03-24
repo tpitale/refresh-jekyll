@@ -1,0 +1,38 @@
+// Colors
+
+$white: #FFFFFF;
+$black: #000000;
+
+$grey86: scale-lightness($black, 86.3%);
+$grey89: scale-lightness($black, 89.8%);
+$grey93: scale-lightness($black, 93.3%);
+$grey97: scale-lightness($black, 97.6%);
+
+$grey20: scale-lightness($black, 20%); /* 333 */
+$grey40: scale-lightness($black, 40%); /* 666 */
+$grey60: scale-lightness($black, 60%); /* 999 */
+$grey80: scale-lightness($black, 80%);
+
+// Defaults
+
+$default-border-radius: 3px;
+$default-transition-property: all;
+$default-transition-duration: 0.25s;
+$default-transition-function: linear;
+
+// Font Family
+$default-font-family: 'Helvetica Neue', Helvetica-Neue, helvetica, sans-serif;
+
+/* @extend .clearfix */
+.clearfix {
+    zoom:1;
+    &:before, &:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+    &:after {
+        clear: both;
+    }
+}

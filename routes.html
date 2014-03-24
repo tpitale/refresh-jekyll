@@ -11,7 +11,7 @@ title: Route Predictions
       <li class="stop">
         <h2 class="stop-name">{{ stop.name }}</h2>
         <h3 class="bus-direction">{{ stop.direction }}</h3>
-        <ol id="{{ stop.id }}" class="buses">
+        <ol id="{{ stop.id }}" class="busses">
           {% for time in stop.times %}
             <li class="bus"><span class="bus-arrival">{{time}} Minutes</span></li>
           {% endfor %}

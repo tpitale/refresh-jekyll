@@ -7,20 +7,19 @@ title: Stop Predictions
   <h1>{{ page.title }} for {{ stop.name }}</h1>
 
   <ul class="predictions">
-  {% for route in stop.routes %}
-    <li class="route">
-      <h2 class="bus-name">{{ route.name }}</h2>
-
+    {% for route in stop.routes %}
       {% for direction in route.directions %}
-        <h3 class="bus-direction">{{ direction.name }}</h3>
-        <ol id="1001223" class="buses">
-          {% for time in direction.times %}
-            <li class="bus"><span class="bus-arrival">{{ time }} Minutes</span></li>
-          {% endfor %}
-        </ol>
+        <li class="route">
+          <h2 class="bus-name">{{ route.name }}</h2>
+          <h3 class="bus-direction">{{ direction.name }}</h3>
+          <ol id="1001223" class="busses">
+            {% for time in direction.times %}
+              <li class="bus"><span class="bus-arrival">{{ time }} Minutes</span></li>
+            {% endfor %}
+          </ol>
+        </li>
       {% endfor %}
-    </li>
-  {% endfor %}
+    {% endfor %}
   </ul>
 {% endfor %}
 

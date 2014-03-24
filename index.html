@@ -3,11 +3,9 @@ layout: session
 title: Your New Jekyll Site
 ---
 
-<div id="home">
-  <h1>Pages</h1>
-  <ul class="posts">
-    {% for page in site.pages %}
-      <li><a href="{{ page.url }}">{{ page.path }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
+<h1>Pages</h1>
+<ul class="pages">
+  {% for page in site.pages %}
+    <li><a href="{{ page.url }}">{{ page.path }}</a></li>
+  {% endfor %}
+</ul>

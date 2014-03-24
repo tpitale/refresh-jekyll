@@ -1,0 +1,124 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "config";
+
+* {
+  @include box-sizing(border-box);
+}
+
+body {
+  font-family: $default-font-family;
+}
+
+a {
+  color: $grey40;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+header {
+  @extend .clearfix;
+
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: $grey97;
+  border-bottom: 1px solid $grey80;
+
+  h1 {
+    float: left;
+  }
+
+  nav {
+    ul {
+      float: right;
+
+      li {
+        float: left;
+        display: block;
+
+        a {
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+main {
+  margin: 1rem 0;
+
+  .pages {margin: 1rem;}
+  .next.login {
+    display: block;
+    margin: 0.5rem 1rem;
+  }
+
+  h1 {
+    padding: 0 1rem;
+    font-size: 200%;
+  }
+
+  .stop, .route {
+    margin: 1rem 0;
+    border-top: 1px solid $grey80;
+
+    h2 {
+      font-size: 150%;
+      padding: 0 1rem;
+      padding-top: 0.5rem;
+      background-color: $grey93;
+    }
+
+    h3 {
+      padding: 0 1rem;
+      padding-bottom: 0.5em;
+      background-color: $grey93;
+    }
+  }
+
+  .busses {
+    padding: 0 1rem;
+    margin-top: 0.5rem;
+
+    li {
+      font-size: 125%;
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  form.central {
+    width: 50%;
+    margin: 5rem auto;
+
+    label {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    input[type='text'],
+    input[type='email'],
+    input[type='password'] {
+      width: 100%;
+      font-size: 100%;
+      padding: 0.25rem;
+      margin-bottom: 1rem;
+      border: 1px solid $grey80;
+
+      @include border-radius($default-border-radius);
+    }
+
+    button,
+    input[type='submit'] {
+      border: none;
+      color: $white;
+      font-size: 100%;
+      padding: 0.5rem 1rem;
+      background-color: $grey40;
+
+      @include border-radius($default-border-radius);
+    }
+  }
+}
