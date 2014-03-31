@@ -1,0 +1,9 @@
+<li class="{{ include.type }}">
+  <h2 class="{{ include.type }}-name">{{ include.name }}</h2>
+  <h3 class="bus-direction">{{ include.direction }}</h3>
+  <ol id="{{ include.stop_id }}" class="busses">
+    {% for time in include.times %}
+      <li class="bus"><span class="bus-arrival">{{ time }} Minutes</span></li>
+    {% endfor %}
+  </ol>
+</li>

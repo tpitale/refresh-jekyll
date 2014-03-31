@@ -8,56 +8,9 @@ title: Route Predictions
 
   <ul class="predictions">
     {% for stop in route.stops %}
-      <li class="stop">
-        <h2 class="stop-name">{{ stop.name }}</h2>
-        <h3 class="bus-direction">{{ stop.direction }}</h3>
-        <ol id="{{ stop.id }}" class="busses">
-          {% for time in stop.times %}
-            <li class="bus"><span class="bus-arrival">{{time}} Minutes</span></li>
-          {% endfor %}
-        </ol>
-      </li>
+
+        {% include times.html type="stop" times=stop.times stop_id=stop.id direction=stop.direction name=stop.name %}
+
     {% endfor %}
   </ul>
 {% endfor %}
-
-<!-- <ul class="predictions">
-  <li class="stop">
-    <h2 class="stop-name">K ST NE + 3RD ST NE</h2>
-    <h3 class="bus-direction">East to Ivy City</h3>
-    <ol id="1001223" class="buses">
-      <li class="bus"><span class="bus-arrival">27 Minutes</span></li>
-      <li class="bus"><span class="bus-arrival">54 Minutes</span></li>
-      <li class="bus"><span class="bus-arrival">84 Minutes</span></li>
-    </ol>
-  </li>
-  <li class="stop">
-    <h2 class="stop-name">K ST NE + 2ND ST NE</h2>
-    <h3 class="bus-direction">West to Franklin Square</h3>
-    <ol id="1001234" class="buses">
-      <li class="bus"><span class="bus-arrival">3 Minutes</span></li>
-      <li class="bus"><span class="bus-arrival">23 Minutes</span></li>
-      <li class="bus"><span class="bus-arrival">53 Minutes</span></li>
-      <li class="bus"><span class="bus-arrival">83 Minutes</span></li>
-    </ol>
-  </li>
-  <li class="stop">
-    <h2 class="stop-name">K ST NE + 3RD ST NE</h2>
-    <h3 class="bus-direction">West to Franklin Square</h3>
-    <ol id="1001230" class="buses">
-      <li class="bus"><span class="bus-arrival">3 Minutes</span></li>
-      <li class="bus"><span class="bus-arrival">23 Minutes</span></li>
-      <li class="bus"><span class="bus-arrival">53 Minutes</span></li>
-      <li class="bus"><span class="bus-arrival">83 Minutes</span></li>
-    </ol>
-  </li>
-  <li class="stop">
-    <h2 class="stop-name">K ST NE + 4TH ST NE</h2>
-    <h3 class="bus-direction">East to Ivy City</h3>
-    <ol id="1001232" class="buses">
-      <li class="bus"><span class="bus-arrival">27 Minutes</span></li>
-      <li class="bus"><span class="bus-arrival">54 Minutes</span></li>
-      <li class="bus"><span class="bus-arrival">84 Minutes</span></li>
-    </ol>
-  </li>
-</ul> -->

@@ -7,16 +7,16 @@
     <meta name="viewport" content="width=device-width">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/stylesheets/default.css">
+    <link rel="stylesheet" href="{{site.baseurl}}stylesheets/default.css">
 
   </head>
   <body>
     <header>
-      <h1><a href="/">{{ site.name }}</a></h1>
+      <h1><a href="{{site.baseurl}}">{{ site.name }}</a></h1>
       <nav>
         <ul>
-          <li><a href="/register.html">Register</a></li>
-          <li><a href="/login.html">Log In</a></li>
+          <li><a href="{{site.baseurl}}register.html">Register</a></li>
+          <li><a href="{{site.baseurl}}login.html">Log In</a></li>
         </ul>
       </nav>
     </header>

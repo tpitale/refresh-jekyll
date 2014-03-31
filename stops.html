@@ -9,56 +9,10 @@ title: Stop Predictions
   <ul class="predictions">
     {% for route in stop.routes %}
       {% for direction in route.directions %}
-        <li class="route">
-          <h2 class="bus-name">{{ route.name }}</h2>
-          <h3 class="bus-direction">{{ direction.name }}</h3>
-          <ol id="1001223" class="busses">
-            {% for time in direction.times %}
-              <li class="bus"><span class="bus-arrival">{{ time }} Minutes</span></li>
-            {% endfor %}
-          </ol>
-        </li>
+
+        {% include times.html type="route" times=direction.times stop_id=stop.id direction=direction.name name=route.name %}
+
       {% endfor %}
     {% endfor %}
   </ul>
 {% endfor %}
-
-<!-- <ul class="predictions">
-  <li class="route">
-    <h2 class="bus-name">D4</h2>
-
-    <h3 class="bus-direction">East to Ivy City</h3>
-    <ol id="1001223" class="buses">
-      <li class="bus"><span class="bus-arrival">27 Minutes</span></li>
-      <li class="bus"><span class="bus-arrival">54 Minutes</span></li>
-      <li class="bus"><span class="bus-arrival">84 Minutes</span></li>
-    </ol>
-
-    <h3 class="bus-direction">West to Franklin Square</h3>
-    <ol id="1001230" class="buses">
-      <li class="bus"><span class="bus-arrival">3 Minutes</span></li>
-      <li class="bus"><span class="bus-arrival">23 Minutes</span></li>
-      <li class="bus"><span class="bus-arrival">53 Minutes</span></li>
-      <li class="bus"><span class="bus-arrival">83 Minutes</span></li>
-    </ol>
-  </li>
-
-  <li class="route">
-    <h2 class="bus-name">X2</h2>
-
-    <h3 class="bus-direction">East to Minnesota Ave Station</h3>
-    <ol id="1001223" class="buses">
-      <li class="bus"><span class="bus-arrival">27 Minutes</span></li>
-      <li class="bus"><span class="bus-arrival">54 Minutes</span></li>
-      <li class="bus"><span class="bus-arrival">84 Minutes</span></li>
-    </ol>
-
-    <h3 class="bus-direction">West to Lafayette Square</h3>
-    <ol id="1001230" class="buses">
-      <li class="bus"><span class="bus-arrival">3 Minutes</span></li>
-      <li class="bus"><span class="bus-arrival">23 Minutes</span></li>
-      <li class="bus"><span class="bus-arrival">53 Minutes</span></li>
-      <li class="bus"><span class="bus-arrival">83 Minutes</span></li>
-    </ol>
-  </li>
-</ul> -->
